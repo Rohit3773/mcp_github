@@ -1,4 +1,4 @@
-# mcp_github_tools
+# mcp_github
 > **MCP + LangGraph + Streamlit Starter** – A minimal stack to build and use MCP tools (GitHub + greeting) with a LangGraph agent and a Streamlit chat UI.
 
 ---
@@ -98,7 +98,7 @@ Expected console sample:
  // gh_create_issue //
  {
    "number": 42,
-   "url": "https://github.com/rohit3773/mcp_github_tools/issues/42",
+   "url": "https://github.com/rohit3773/mcp_github/issues/42",
    "id": 1234567890,
    "state": "open"
  }
@@ -114,8 +114,8 @@ python agent/run_agent.py
 
 Example prompts you can try:
 - `Say hello to Rohit using the greet tool.`
-- `List open issues in rohit3773/mcp_github_tools (limit 20).`
-- `Create a GitHub issue in rohit3773/mcp_github_tools titled "Dark mode theme breaks on settings page" with body "When switching to dark mode, some text remains black and becomes invisible" and labels ui, theme.`
+- `List open issues in rohit3773/mcp_github (limit 20).`
+- `Create a GitHub issue in rohit3773/mcp_github titled "Dark mode theme breaks on settings page" with body "When switching to dark mode, some text remains black and becomes invisible" and labels ui, theme.`
 
 > The agent binds MCP tools dynamically and routes using `tools_condition`. Any new MCP tool you add to the server becomes immediately usable by the agent.
 
@@ -134,7 +134,7 @@ Open the URL shown (e.g., http://localhost:8501).
 >
 > - `docs/screenshots/streamlit_home.png` – Chat landing screen  
 > - `docs/screenshots/streamlit_tool_call.png` – When the agent calls an MCP tool  
-> - `docs/screenshots/streamlit_issue_created.png` – Successful GitHub issue creation
+> - `docs/screenshots/streamlit_issue_list.png` – Successful GitHub issue creation
 
 <p align="center">
   <img src="docs/screenshots/streamlit_tool_call.png" alt="Tool Call" width="720">
@@ -206,7 +206,7 @@ User ↔ Streamlit UI
 ## 🧪 Example: cURL sanity check for issues (optional)
 
 ```bash
-curl -H "Authorization: Bearer $GITHUB_TOKEN"      -H "Accept: application/vnd.github+json"      "https://api.github.com/repos/rohit3773/mcp_github_tools/issues?state=open&per_page=10"
+curl -H "Authorization: Bearer $GITHUB_TOKEN"      -H "Accept: application/vnd.github+json"      "https://api.github.com/repos/rohit3773/mcp_github/issues?state=open&per_page=10"
 ```
 
 > The GitHub `/issues` endpoint returns both issues and PRs—your MCP server filters out PRs automatically.
@@ -216,20 +216,20 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN"      -H "Accept: application/vnd.g
 ## 💡 Usage examples (copy-paste)
 
 **Create issues**
-- “Create a GitHub issue in rohit3773/mcp_github_tools titled ‘Dark mode theme breaks on settings page’ with the body ‘When switching to dark mode, some text remains black and becomes invisible’ and add labels ui and theme.”
-- “Open a new issue in rohit3773/mcp_github_tools titled ‘API timeout on login’ with the body ‘Login API intermittently returns 504 Gateway Timeout after 30s’ and add labels backend and bug.”
-- “In the repo rohit3773/mcp_github_tools, create an issue titled ‘Update documentation for installation’ with the body ‘Docs don’t mention Python 3.11 requirement’ and add label documentation.”
+- “Create a GitHub issue in rohit3773/mcp_github titled ‘Dark mode theme breaks on settings page’ with the body ‘When switching to dark mode, some text remains black and becomes invisible’ and add labels ui and theme.”
+- “Open a new issue in rohit3773/mcp_github titled ‘API timeout on login’ with the body ‘Login API intermittently returns 504 Gateway Timeout after 30s’ and add labels backend and bug.”
+- “In the repo rohit3773/mcp_github, create an issue titled ‘Update documentation for installation’ with the body ‘Docs don’t mention Python 3.11 requirement’ and add label documentation.”
 
 **Open PRs**
-- “Open a pull request in rohit3773/mcp_github_tools from branch feature/add-logging into main titled ‘Add structured logging’ with the body ‘Implements JSON logging across all services.’ Mark it as draft.”
-- “Create a PR in rohit3773/mcp_github_tools from branch fix/login-bug into develop titled ‘Fix login redirect bug’ with the body ‘Resolves issue where login redirects twice after success.’”
+- “Open a pull request in rohit3773/mcp_github from branch feature/add-logging into main titled ‘Add structured logging’ with the body ‘Implements JSON logging across all services.’ Mark it as draft.”
+- “Create a PR in rohit3773/mcp_github from branch fix/login-bug into develop titled ‘Fix login redirect bug’ with the body ‘Resolves issue where login redirects twice after success.’”
 
 **Mixed**
-- “Please create a GitHub issue in rohit3773/mcp_github_tools called ‘Refactor utils.py’ with the body ‘utils.py has grown too large, needs splitting into modules.’ Add label refactor.”
+- “Please create a GitHub issue in rohit3773/mcp_github called ‘Refactor utils.py’ with the body ‘utils.py has grown too large, needs splitting into modules.’ Add label refactor.”
 - “Now open a pull request from branch refactor-utils into main titled ‘Refactor utils.py into modules’ with the body ‘Splits helpers into multiple files as discussed.’”
 
 **Resource + Tool combo (if you surface greet in UI)**
-- “Say hello to Alice and then create an issue in rohit3773/mcp_github_tools titled ‘Welcome message typo’ with the body ‘Greeting says Hello, Alicee instead of Hello, Alice.’ Label it bug.”
+- “Say hello to Alice and then create an issue in rohit3773/mcp_github titled ‘Welcome message typo’ with the body ‘Greeting says Hello, Alicee instead of Hello, Alice.’ Label it bug.”
 
 ---
 
@@ -242,7 +242,7 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN"      -H "Accept: application/vnd.g
   Add `GITHUB_TOKEN` to the server’s `.env` and restart. For private repos, ensure the token has `repo` scope.
 
 - **GitHub API 404 for repo or permissions**  
-  Check the repo name (e.g., `mcp_github_tools` **with an ‘s’**) and token scopes. Verify visibility of the repo.
+  Check the repo name (e.g., `mcp_github` **with an ‘s’**) and token scopes. Verify visibility of the repo.
 
 - **Rate limiting**  
   Unauthenticated requests are rate-limited—always use `GITHUB_TOKEN` on the server.
