@@ -3,34 +3,34 @@ GitHub MCP Tool Usage Examples
 
 Issue creation
 --------------
-- Create a GitHub issue in rohit3773/mcp_github_tools titled "Dark mode theme breaks on settings page"
+- Create a GitHub issue in rohit3773/mcp_github titled "Dark mode theme breaks on settings page"
   with the body "When switching to dark mode, some text remains black and becomes invisible"
   and add labels ui and theme.
 
-- Open a new issue in rohit3773/mcp_github_tools titled "API timeout on login"
+- Open a new issue in rohit3773/mcp_github titled "API timeout on login"
   with the body "Login API intermittently returns 504 Gateway Timeout after 30s"
   and add labels backend and bug.
 
-- In the repo rohit3773/mcp_github_tools, create an issue titled "Update documentation for installation"
+- In the repo rohit3773/mcp_github, create an issue titled "Update documentation for installation"
   with the body "Docs don’t mention Python 3.11 requirement"
   and add label documentation.
 
 Pull requests
 -------------
-- Open a pull request in rohit3773/mcp_github_tools
+- Open a pull request in rohit3773/mcp_github
   from branch feature/add-logging into main
   titled "Add structured logging"
   with the body "Implements JSON logging across all services."
   Mark it as draft.
 
-- Create a PR in rohit3773/mcp_github_tools
+- Create a PR in rohit3773/mcp_github
   from branch fix/login-bug into develop
   titled "Fix login redirect bug"
   with the body "Resolves issue where login redirects twice after success."
 
 Mixed examples
 --------------
-- Please create a GitHub issue in rohit3773/mcp_github_tools
+- Please create a GitHub issue in rohit3773/mcp_github
   called "Refactor utils.py"
   with the body "utils.py has grown too large, needs splitting into modules."
   Add label refactor.
@@ -43,7 +43,7 @@ Mixed examples
 Resource + Tool combination
 ---------------------------
 - Say hello to Alice
-  and then create an issue in rohit3773/mcp_github_tools
+  and then create an issue in rohit3773/mcp_github
   titled "Welcome message typo"
   with the body "Greeting says Hello, Alicee instead of Hello, Alice."
   Label it bug.
