@@ -137,7 +137,7 @@ Open the URL shown (e.g., http://localhost:8501).
 > - `docs/screenshots/streamlit_issue_list.png` – Successful GitHub issue creation
 
 <p align="center">
-  <img src="docs/screenshots/streamlit_tool_call.png" alt="Tool Call" width="720">
+  <img src="docs/screenshots/streamlit_issue_list.png" alt="Tool Call" width="720">
 </p>
 
 ---
